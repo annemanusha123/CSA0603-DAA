@@ -1,0 +1,24 @@
+#include <stdio.h>
+
+int main() {
+    int nums[] = {1, 2, 1};
+    int n = 3;
+    int sum = 0;
+
+    for (int i = 0; i < n; i++) {
+        int visited[100] = {0};
+        int distinct = 0;
+
+        for (int j = i; j < n; j++) {
+            if (visited[nums[j]] == 0) {
+                visited[nums[j]] = 1;
+                distinct++;
+            }
+            sum += distinct * distinct;
+        }
+    }
+
+    printf("Sum = %d\n", sum);
+
+    return 0;
+}
