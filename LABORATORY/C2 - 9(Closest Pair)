@@ -1,0 +1,14 @@
+#include<stdio.h>
+#include<math.h>
+int main(){
+double x[]={1,4,7,3},y[]={2,5,8,1},min=999;
+int i,j,p=0,q=1;
+for(i=0;i<3;i++)
+for(j=i+1;j<4;j++){
+double d=sqrt((x[i]-x[j])*(x[i]-x[j])+(y[i]-y[j])*(y[i]-y[j]));
+if(d<min){min=d;p=i;q=j;}
+}
+printf("Closest: (%.0f,%.0f)-(%.0f,%.0f)\n",x[p],y[p],x[q],y[q]);
+printf("Distance: %.6f",min);
+return 0;
+}
