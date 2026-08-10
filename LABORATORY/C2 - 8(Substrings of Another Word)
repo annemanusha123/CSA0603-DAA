@@ -1,0 +1,21 @@
+#include<stdio.h>
+#include<string.h>
+void solve(char w[][20],int n){
+int i,j;
+for(i=0;i<n;i++)
+for(j=0;j<n;j++)
+if(i!=j&&strstr(w[j],w[i])){
+printf("%s ",w[i]);
+break;
+}
+printf("\n");
+}
+int main(){
+char a[][20]={"mass","as","hero","superhero"};
+char b[][20]={"leetcode","et","code"};
+char c[][20]={"blue","green","bu"};
+solve(a,4);
+solve(b,3);
+solve(c,3);
+return 0;
+}
